@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        
+        <header>
+            <div id="app">
+                <input type="text" name="search" v-model="search" placeholder="Search" @keyup.enter="inviaRichiesta()">
+            </div>
+        </header>
+
+        <main>
+            <div class="films_container">
+                <ul v-for="film in films">
+                    <li></li>
+                </ul>
+            </div>
+        </main>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
