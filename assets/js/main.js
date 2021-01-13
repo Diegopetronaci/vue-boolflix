@@ -37,10 +37,28 @@ let app = new Vue({
                         const votoDaTrasformare = Math.ceil(response.data.results[i].vote_average / 2);
                         /* console.log(votoDaTrasformare); */
                         response.data.results[i].vote_average = votoDaTrasformare;
-                        
+                        /* console.log(response.data.results[i].vote_average); */
+                        const votoTrasformato = votoDaTrasformare;
+                        console.log(votoTrasformato);
 
-                        if (rispostaBase.original.language == ) {
-                            
+                        const votazioneTrasformata = rispostaBase[i].vote_average
+                        if (votazioneTrasformata == 0) {
+                            console.log("0 stella");
+                        }
+                        if (votazioneTrasformata == 1  ) {
+                            console.log("1 stella");
+                        }
+                        if (votazioneTrasformata == 2) {
+                            console.log("2 stella");
+                        }
+                        if (votazioneTrasformata == 3) {
+                            console.log("3 stella");
+                        }
+                        if (votazioneTrasformata == 4) {
+                            console.log("4 stella");
+                        }
+                        if (votazioneTrasformata == 5) {
+                            console.log("5 stella");
                         }
                     }
                 })
