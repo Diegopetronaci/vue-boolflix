@@ -33,8 +33,15 @@ let app = new Vue({
                     console.log(risultato);
 
                     for (let i = 0; i < self.films.length; i++) {
+                        const rispostaBase = response.data.results;
                         const votoDaTrasformare = Math.ceil(response.data.results[i].vote_average / 2);
-                        console.log(votoDaTrasformare);
+                        /* console.log(votoDaTrasformare); */
+                        response.data.results[i].vote_average = votoDaTrasformare;
+                        
+
+                        if (rispostaBase.original.language == ) {
+                            
+                        }
                     }
                 })
         },
