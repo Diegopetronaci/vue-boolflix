@@ -6,6 +6,8 @@ let app = new Vue({
     data: {
         search: "",
         films: [],
+        arrayVoto: [],
+        stelle: null,
     },
 
     methods: {
@@ -32,35 +34,25 @@ let app = new Vue({
                     this.films = risultato
                     console.log(risultato);
 
-                    for (let i = 0; i < self.films.length; i++) {
-                        const rispostaBase = response.data.results;
+                    for (let i = 0; i < self.films; i++) {
+                        /* const rispostaBase = response.data.results; */
                         const votoDaTrasformare = Math.ceil(response.data.results[i].vote_average / 2);
                         /* console.log(votoDaTrasformare); */
                         response.data.results[i].vote_average = votoDaTrasformare;
                         /* console.log(response.data.results[i].vote_average); */
                         const votoTrasformato = votoDaTrasformare;
-                        console.log(votoTrasformato);
-
-                        const votazioneTrasformata = rispostaBase[i].vote_average
-                        if (votazioneTrasformata == 0) {
-                            console.log("0 stella");
-                        }
-                        if (votazioneTrasformata == 1  ) {
-                            console.log("1 stella");
-                        }
-                        if (votazioneTrasformata == 2) {
-                            console.log("2 stella");
-                        }
-                        if (votazioneTrasformata == 3) {
-                            console.log("3 stella");
-                        }
-                        if (votazioneTrasformata == 4) {
-                            console.log("4 stella");
-                        }
-                        if (votazioneTrasformata == 5) {
-                            console.log("5 stella");
-                        }
+                        this.stelle = votoTrasformato;
+                        //console.log(votoDaTrasformare);
+                        /* const votazioneTrasformata = rispostaBase[i].vote_average
+                        console.log(votazioneTrasformata); */ 
                     }
+
+                    /* let n = 5 ;
+                    for (let i = 0; i < n ; i++) {
+                        self.arrayVoto.push(self.voto)
+                        console.log(self.arrayVoto);
+                    } */
+
                 })
         },
         /* trasformaVoto(){
