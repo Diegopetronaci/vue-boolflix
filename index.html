@@ -20,10 +20,13 @@
             <main>
                 <div class="films_container">
                     <ul v-for="film in films">
+                        <!-- <img src="https://image.tmdb.org/t/p/w342/u1z05trCA7AuSuDhi365grwdos1.jpg" alt=""> -->
+                        <img v-if="film.copertinaCompleta == 'undefined'" :src="assets/img/posternotfound.png" alt="">
+                        <img v-else="" :src="film.copertinaCompleta" alt="">
                         <li>{{film.title}}</li>
                         <li>{{film.original_title}}</li>
                         <!-- <li>{{film.original_language}}</li> -->
-                        <li>
+                        <li class="lingua">
                             <img v-if="film.original_language == 'it'" class="flag" src="assets/img/ita.png" alt="">
                             <img v-else-if="film.original_language == 'en'" class="flag" src="assets/img/eng.png" alt="">
                             <img v-else-if="film.original_language == 'fr'" class="flag" src="assets/img/fra.png" alt="">
@@ -35,17 +38,17 @@
                         </li>
                         <!-- <li>{{film.vote_average}}</li> -->
                         <li>
-                            <i class="fas fa-star" v-for="stella in film.stelle"></i>
-                            <i class="far fa-star" v-for="stella in (5-film.stelle)"></i>
+                            <i class="fas fa-star" v-for="stella in film.stelle"></i><i class="far fa-star" v-for="stella in (5-film.stelle)"></i>
                         </li>
                     </ul>
                 </div>
 
-                <div class="tvSeries_container">
+               <!--  <div class="tvSeries_container">
                     <ul v-for="serie in tvSeries">
+                        <img :src="serie.copertinaCompleta" alt="">
                         <li>{{serie.name}}</li>
                         <li>{{serie.original_name}}</li>
-                        <!-- <li>{{film.original_language}}</li> -->
+                        
                         <li>
                             <img v-if="serie.original_language == 'it'" class="flag" src="assets/img/ita.png" alt="">
                             <img v-else-if="serie.original_language == 'en'" class="flag" src="assets/img/eng.png" alt="">
@@ -56,13 +59,12 @@
                             <img v-else-if="serie.original_language == 'cs'" class="flag" src="assets/img/repcieca.png" alt="">
                             <img v-else="" class="flag" src="assets/img/ops.png" alt="">
                         </li>
-                        <!-- <li>{{film.vote_average}}</li> -->
+                        
                         <li>
-                            <i class="fas fa-star" v-for="stella in serie.stelle"></i>
-                            <i class="far fa-star" v-for="stella in (5-serie.stelle)"></i>
+                            <i class="fas fa-star" v-for="stella in serie.stelle"></i><i class="far fa-star" v-for="stella in (5-serie.stelle)"></i>
                         </li>
                     </ul>
-                </div>
+                </div> -->
                 
             </main>
         </div>

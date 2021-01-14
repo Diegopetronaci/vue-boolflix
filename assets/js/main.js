@@ -54,6 +54,13 @@ let app = new Vue({
                         console.log(votazioneTrasformata); */
                     
                     });
+                    this.films.forEach(element => {
+                        const base = "https://image.tmdb.org/t/p/w342";
+                        const linkCopertina = element.poster_path;
+                        return element.copertinaCompleta = base + linkCopertina;
+                        
+                    });
+                    console.log(element.copertinaCompleta);
                 })
             axios
                 .get("https://api.themoviedb.org/3/search/tv", {
@@ -76,17 +83,14 @@ let app = new Vue({
 
                     this.tvSeries.forEach(element => {
 
-                        /* const rispostaBase = response.data.results; */
                         const votoDaTrasformare = Math.ceil(element.vote_average / 2);
                         return element.stelle = votoDaTrasformare;
-                        /* console.log(votoDaTrasformare); */
-                        //response.data.results[i].vote_average = votoDaTrasformare;
-                        /* console.log(response.data.results[i].vote_average); */
-                        //const votoTrasformato = votoDaTrasformare;
-                        //this.stelle = votoTrasformato;
-                        //console.log(votoDaTrasformare);
-                        /* const votazioneTrasformata = rispostaBase[i].vote_average
-                        console.log(votazioneTrasformata); */
+                        
+                    });
+                    this.tvSeries.forEach(element => {
+                        const base = "https://image.tmdb.org/t/p/w342";
+                        const linkCopertina = element.poster_path;
+                        return element.copertinaCompleta = base + linkCopertina;
 
                     });
                 })
