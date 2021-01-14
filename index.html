@@ -21,8 +21,8 @@
                 <div class="films_container">
                     <ul v-for="film in films">
                         <!-- <img src="https://image.tmdb.org/t/p/w342/u1z05trCA7AuSuDhi365grwdos1.jpg" alt=""> -->
-                        <img v-if="film.copertinaCompleta == 'undefined'" :src="assets/img/posternotfound.png" alt="">
-                        <img v-else="" :src="film.copertinaCompleta" alt="">
+                        <img v-if="film.copertinaCompleta" :src="film.copertinaCompleta" alt="">
+                        <img v-else src="assets/img/posternotfound.png" alt="">
                         <li>{{film.title}}</li>
                         <li>{{film.original_title}}</li>
                         <!-- <li>{{film.original_language}}</li> -->
@@ -43,9 +43,10 @@
                     </ul>
                 </div>
 
-               <!--  <div class="tvSeries_container">
+                <div class="tvSeries_container">
                     <ul v-for="serie in tvSeries">
-                        <img :src="serie.copertinaCompleta" alt="">
+                        <img v-if="serie.copertinaCompleta" :src="serie.copertinaCompleta" alt="">
+                        <img v-else src="assets/img/posternotfound.png" alt="">
                         <li>{{serie.name}}</li>
                         <li>{{serie.original_name}}</li>
                         
@@ -64,7 +65,7 @@
                             <i class="fas fa-star" v-for="stella in serie.stelle"></i><i class="far fa-star" v-for="stella in (5-serie.stelle)"></i>
                         </li>
                     </ul>
-                </div> -->
+                </div>
                 
             </main>
         </div>

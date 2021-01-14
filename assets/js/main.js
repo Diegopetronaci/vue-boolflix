@@ -57,10 +57,12 @@ let app = new Vue({
                     this.films.forEach(element => {
                         const base = "https://image.tmdb.org/t/p/w342";
                         const linkCopertina = element.poster_path;
-                        return element.copertinaCompleta = base + linkCopertina;
-                        
+                        if (element.poster_path) {
+                            return element.copertinaCompleta = base + linkCopertina;
+                        } else {
+                            return element.copertinaCompleta = linkCopertina;
+                        }                        
                     });
-                    console.log(element.copertinaCompleta);
                 })
             axios
                 .get("https://api.themoviedb.org/3/search/tv", {
@@ -93,6 +95,15 @@ let app = new Vue({
                         return element.copertinaCompleta = base + linkCopertina;
 
                     });
+                    this.tvSeries.forEach(element => {
+                        const base = "https://image.tmdb.org/t/p/w342";
+                        const linkCopertina = element.poster_path;
+                        if (element.poster_path) {
+                            return element.copertinaCompleta = base + linkCopertina;
+                        } else {
+                            return element.copertinaCompleta = linkCopertina;
+                        }
+                    });  
                 })
         },
     },
