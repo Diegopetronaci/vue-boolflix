@@ -7,6 +7,8 @@ let app = new Vue({
         search: "",
         films: [],
         tvSeries: [],
+        sezioneFilm: "",
+        sezioneSerieTv: "",
     },
 
     methods: {
@@ -18,6 +20,8 @@ let app = new Vue({
                     this.films = response.data;
                     console.log(response.data);
                 }) */
+            this.sezioneFilm = "Film";
+            this.sezioneSerieTv = "Serie Tv"
 
             const self = this;
             axios

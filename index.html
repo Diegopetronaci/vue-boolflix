@@ -19,15 +19,18 @@
             </header>
             
             <main class="sfondoMain">
+                <div class="text_center">
+                    <h1>{{sezioneFilm}}</h1>
+                </div>
                 <div class="films_container d_flex p_10">
                     <ul v-for="film in films" class="pr_10">
                         <!-- <img src="https://image.tmdb.org/t/p/w342/u1z05trCA7AuSuDhi365grwdos1.jpg" alt=""> -->
                         <div class="card">
                             <img v-if="film.copertinaCompleta" :src="film.copertinaCompleta" alt="">
-                            <img id="img_undefined" v-else src="assets/img/posternotfound.png" alt="">
+                            <img class="img_undefined" v-else src="assets/img/posternotfound.png" alt="">
                             <div class="info d_flex_column flex_around text_center">
-                                <h1>{{film.title}}</h1>
-                                <h2>{{film.original_title}}</h2>
+                                <h2>{{film.title}}</h2>
+                                <h3>{{film.original_title}}</h3>
                                 <!-- <li>{{film.original_language}}</li> -->
                                 <li class="lingua">
                                     <img v-if="film.original_language == 'it'" class="flag" src="assets/img/ita.png" alt="">
@@ -50,29 +53,41 @@
                         </div>
                     </ul>
                 </div>
-                <!-- <div class="tvSeries_container d_flex">
+                
+                <div class="text_center">
+                    <h1>{{sezioneSerieTv}}</h1>
+                </div>
+                <div class="tvSeries_container d_flex p_10">
                     <ul v-for="serie in tvSeries">
-                        <img v-if="serie.copertinaCompleta" :src="serie.copertinaCompleta" alt="">
-                        <img v-else src="assets/img/posternotfound.png" alt="">
-                        <li>{{serie.name}}</li>
-                        <li>{{serie.original_name}}</li>
-
-                        <li>
-                            <img v-if="serie.original_language == 'it'" class="flag" src="assets/img/ita.png" alt="">
-                            <img v-else-if="serie.original_language == 'en'" class="flag" src="assets/img/eng.png" alt="">
-                            <img v-else-if="serie.original_language == 'fr'" class="flag" src="assets/img/fra.png" alt="">
-                            <img v-else-if="serie.original_language == 'ja'" class="flag" src="assets/img/jap.png" alt="">
-                            <img v-else-if="serie.original_language == 'es'" class="flag" src="assets/img/esp.png" alt="">
-                            <img v-else-if="serie.original_language == 'de'" class="flag" src="assets/img/det.png" alt="">
-                            <img v-else-if="serie.original_language == 'cs'" class="flag" src="assets/img/repcieca.png" alt="">
-                            <img v-else="" class="flag" src="assets/img/ops.png" alt="">
-                        </li>
-                        
-                        <li>
-                            <i class="fas fa-star" v-for="stella in serie.stelle"></i><i class="far fa-star" v-for="stella in (5-serie.stelle)"></i>
-                        </li>
+                        <div class="card">
+                            <img v-if="serie.copertinaCompleta" :src="serie.copertinaCompleta" alt="">
+                            <img v-else class="img_undefined" src="assets/img/posternotfound.png" alt="">
+                            <div class="info d_flex_column flex_around text_center">
+                                <h2>{{serie.name}}</h2>
+                                <h3>{{serie.original_name}}</h3>
+                            
+                                <li class="lingua">
+                                    <img v-if="serie.original_language == 'it'" class="flag" src="assets/img/ita.png" alt="">
+                                    <img v-else-if="serie.original_language == 'en'" class="flag" src="assets/img/eng.png" alt="">
+                                    <img v-else-if="serie.original_language == 'fr'" class="flag" src="assets/img/fra.png" alt="">
+                                    <img v-else-if="serie.original_language == 'ja'" class="flag" src="assets/img/jap.png" alt="">
+                                    <img v-else-if="serie.original_language == 'es'" class="flag" src="assets/img/esp.png" alt="">
+                                    <img v-else-if="serie.original_language == 'de'" class="flag" src="assets/img/det.png" alt="">
+                                    <img v-else-if="serie.original_language == 'cs'" class="flag" src="assets/img/repcieca.png" alt="">
+                                    <img v-else="" class="flag" src="assets/img/ops.png" alt="">
+                                </li>
+                            
+                                <li class="color_yellow">
+                                    <i class="fas fa-star" v-for="stella in serie.stelle"></i><i class="far fa-star"
+                                        v-for="stella in (5-serie.stelle)"></i>
+                                </li>
+                                <p class="descrizione">
+                                    {{serie.overview}}
+                                </p>
+                            </div>
+                        </div>
                     </ul>
-                </div> -->   
+                </div>  
             </main>
         </div>
 
