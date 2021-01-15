@@ -12,13 +12,14 @@
         
         <div id="app">
             <header>
-                <div >
+                <div class="sfondoSearch d_flex flex_between">
+                    <img src="assets/img/boolflix.png" alt="">
                     <input type="text" name="search" v-model="search" placeholder="Search" @keyup.enter="inviaRichiestaFilm()" >
                 </div>
             </header>
             
-            <main>
-                <div class="films_container">
+            <main class="sfondoMain">
+                <div class="films_container d_flex">
                     <ul v-for="film in films">
                         <!-- <img src="https://image.tmdb.org/t/p/w342/u1z05trCA7AuSuDhi365grwdos1.jpg" alt=""> -->
                         <img v-if="film.copertinaCompleta" :src="film.copertinaCompleta" alt="">
@@ -43,13 +44,13 @@
                     </ul>
                 </div>
 
-                <div class="tvSeries_container">
+                <div class="tvSeries_container d_flex">
                     <ul v-for="serie in tvSeries">
                         <img v-if="serie.copertinaCompleta" :src="serie.copertinaCompleta" alt="">
                         <img v-else src="assets/img/posternotfound.png" alt="">
                         <li>{{serie.name}}</li>
                         <li>{{serie.original_name}}</li>
-                        
+
                         <li>
                             <img v-if="serie.original_language == 'it'" class="flag" src="assets/img/ita.png" alt="">
                             <img v-else-if="serie.original_language == 'en'" class="flag" src="assets/img/eng.png" alt="">
@@ -65,8 +66,7 @@
                             <i class="fas fa-star" v-for="stella in serie.stelle"></i><i class="far fa-star" v-for="stella in (5-serie.stelle)"></i>
                         </li>
                     </ul>
-                </div>
-                
+                </div>   
             </main>
         </div>
 

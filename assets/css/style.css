@@ -1,7 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: grey;
+}
+
+/* utilityClass */
+.d_flex{
+    display: flex;
+}
+.flex_around {
+    justify-content: space-around;
+}
+.flex_between {
+    justify-content: space-between;
+}
+/* utilityClass */
+
+/* header */
+.sfondoSearch {
+    background-color: black;
+    height: 100px;
+}
+.sfondoSearch > img {
+    width: 200px;
+    line-height: 100px;
+    vertical-align: middle;
+    padding: 20px;
+}
+.sfondoSearch > input {
+    height: 30px;    
+    padding-left: 15px;
+    margin: 35px;
+}
+/* header */
+
+/* main */
+.films_container, .tvSeries_container {
+    overflow-x: auto;
+}
+/* main */
+
+
 .flag {
     width: 25px;
 }
 
 img {
     max-width: 342px;
+    max-height: 500px;
 }
