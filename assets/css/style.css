@@ -9,8 +9,15 @@ body {
 }
 
 /* utilityClass */
+.text_center{
+    text-align: center;
+}
 .d_flex{
     display: flex;
+}
+.d_flex_column{
+    display: flex;
+    flex-direction: column;
 }
 .flex_around {
     justify-content: space-around;
@@ -18,6 +25,19 @@ body {
 .flex_between {
     justify-content: space-between;
 }
+.m_10 {
+    margin: 10px;
+}
+.p_10 {
+    padding: 10px;
+}
+.pr_10 {
+    padding-right: 10px;
+}
+.color_yellow {
+    color: yellow;
+}
+
 /* utilityClass */
 
 /* header */
@@ -36,11 +56,38 @@ body {
     padding-left: 15px;
     margin: 35px;
 }
+li {
+    list-style: none;
+}
 /* header */
 
 /* main */
 .films_container, .tvSeries_container {
     overflow-x: auto;
+}
+.card {
+    position: relative;
+    width: 340px;
+    height: 500px;
+}
+.info {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+    background-color: black;
+    opacity: 0;
+    width: 334px;
+    height: 500px;
+    overflow-y: auto;
+
+}
+.card:hover .info {
+    opacity: 0.9;
+    cursor: pointer;
 }
 /* main */
 
@@ -51,5 +98,10 @@ body {
 
 img {
     max-width: 342px;
+    max-height: 500px;
+}
+
+#img_undefined{
+    max-width: 334px;
     max-height: 500px;
 }
