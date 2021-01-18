@@ -88,12 +88,14 @@ li {
     opacity: 0;
     width: 340px;
     height: 500px;
-    overflow-y: auto;
 
 }
 .card:hover .info {
     opacity: 0.9;
     cursor: pointer;
+}
+.descrizione{
+    overflow-y: auto;
 }
 /* main */
 
